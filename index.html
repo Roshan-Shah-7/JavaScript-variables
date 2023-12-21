@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Variables are like containers which are used to store data.
+        // Three types :
+        // 1. const : use when value or data is fixed and don't want to change it later
+        // EG:
+        const PI = 3.14233;
+        // 2. var
+        // Before ES6 var is used mostly
+        // But the problem with var is that if we declare a variable inside a 
+        // function without using let or const then this keyword becomes global.
+
+
+        // 3. let
+        // After ES6 let is introduce
+        // Most of the time "let" is used
+        // It works same as var but not global
+        // If you declare a variable in a block
+        // (anything between {}) then it will be limited to that block.
+        let radius = 5;
+
+        // let vs var
+        // Scope: Variables declared with var are function-scoped,
+        // meaning they are accessible within the function they are 
+        // declared in, or globally if declared outside of any function. 
+        // Where as
+        // On the other hand, variables declared with let are block-scoped, 
+        // which means they are only accessible within the block they are declared
+        // in (e.g., inside a loop or an if statement).
+
+        // Eg:
+        function example() {
+            var x = 10;
+            let y = 20;
+
+            if (true) {
+                var x = 30; // This reassigns the outer variable x
+                let y = 40; // This creates a new block-scoped variable y
+                console.log(x); // Output: 30
+                console.log(y); // Output: 40
+            }
+
+            console.log(x); // Output: 30
+            console.log(y); // Output: 20 (outer y is still accessible)
+        }
+
+        example();
+        
+
+        // Hoisting: Variables declared with var are hoisted to the 
+        // top of their scope, which means they can be accessed before 
+        // they are declared (although their value will be undefined). 
+        // On the other hand, variables declared with let are not hoisted, 
+        // and trying to access them before they are declared will result in 
+        // a ReferenceError.
+
+        // Here's an example to illustrate hoisting:
+        console.log(x); // Output: undefined
+        console.log(y); // Output: ReferenceError: y is not defined
+
+        var x = 10;
+        let y = 20;
+        // In general, it is recommended to use let instead of var in 
+        // modern JavaScript, as it provides better scoping and helps avoid 
+        // some common pitfalls associated with var. However, there are still 
+        // cases where var might be useful, especially when dealing with older 
+        // codebases or specific use cases.
+
+
+
+
+        // Rules:
+        // 1.Don't start with number
+        // 2.But can start wiht underscrole (_),letter
+        // 3.Reserved word by JavaScript cannot use
+        // 4.Case sensitive
+        // like:
+        let name = 'Roshan'
+        let Name = 'Roshan'
+        // both variable are different
+    </script>
+</body>
+
+</html>
